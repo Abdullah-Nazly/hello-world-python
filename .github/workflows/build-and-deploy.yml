@@ -9,7 +9,7 @@ on:
 
 jobs:
   BuildAndDeploy:
-    runs-on: [self-hosted, hello-world-application]
+    runs-on: [self-hosted, abdullah-pc]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
