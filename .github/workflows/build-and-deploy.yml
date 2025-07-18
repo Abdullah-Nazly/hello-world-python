@@ -9,13 +9,16 @@ on:
 
 jobs:
   BuildAndDeploy:
-    runs-on: [self-hosted, abdullah-pc]
+    runs-on: [self-hosted, python-app]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Stop existing containers
+        run: docker-compose down || true
 
       - name: Build Docker image
         run: docker build -t my_python_app .
 
       - name: Run Docker container
-        run: docker compose up -d
+        run: docker-compose up -d
