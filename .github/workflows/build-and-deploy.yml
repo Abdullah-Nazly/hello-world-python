@@ -14,9 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Stop existing containers
-        run: docker-compose down || true
-
       - name: Build Docker image
         run: docker build -t my_python_app .
 
